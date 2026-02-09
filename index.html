@@ -698,7 +698,12 @@
                     </div>
                 </div>
 
-                <button class="play-song-button">🎵 Play Our Song</button>
+                <button class="play-song-button" onclick="toggleSong()">🎵 Play Our Song</button>
+
+                <audio id="ourSong">
+                    <source src="images/DieForYou.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
         </section>
 
@@ -796,6 +801,22 @@
                 }
             });
         });
+
+        function playSong() {
+            const audio = document.getElementById("ourSong");
+            audio.play();
+        }
+
+        function toggleSong() {
+            const audio = document.getElementById("ourSong");
+
+            if (audio.paused) {
+            audio.play();
+            } else {
+            audio.pause();
+            }
+        }
+
     </script>
 </body>
 </html>
